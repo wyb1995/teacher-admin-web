@@ -7,7 +7,7 @@ class  TeacherLoginForm extends Component {
    judge(){
         let email = this.refs.email.value;
         let password = this.refs.password.value;
-       this.props.onJude(email,password);
+       this.props.onJudge(email,password);
     }
 
     render() {

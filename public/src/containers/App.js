@@ -4,9 +4,10 @@ import TeacherLoginApp from '../components/LoginApp';
 
 
 class App extends Component {
+
     render() {
         return (<div>
-                <TeacherLoginApp/>
+                <TeacherLoginApp />
             </div>
         );
     }
