@@ -1,9 +1,22 @@
 'use strict';
+export const checkLogin = (email, password)=>{
+    return (dispatch)=>{
 
-var Reflux = require('reflux');
+                if(err){
+                    throw err;
+                }else {
+                    if(email === 'admin@admin.com' &&
+                        password === '12345678') {
+                        dispatch(isCorrect(email,password));
+                    }
+                }
 
-var LoginActions = Reflux.createActions([
-    'login',
-]);
+    };
+};
 
-module.exports = LoginActions;
+export const isCorrect = (data)=>{
+    return {
+        type:'Login',
+        data
+    };
+};
