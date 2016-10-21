@@ -4,6 +4,11 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 
 class  TeacherLoginForm extends Component {
+   judge(){
+        let email = this.refs.email.value;
+        let password = this.refs.password.value;
+       this.props.onJude(email,password);
+    }
 
     render() {
         return (
@@ -11,11 +16,11 @@ class  TeacherLoginForm extends Component {
                 <h3 className="welcome">欢迎注册思沃学院</h3>
 
                 <div className="form-group">
-                    <input  ref="mobilePhone" className="form-control" type="text" placeholder="请输入手机号"/>
+                    <input  ref="email" className="form-control" type="text" placeholder="请输入手机号"/>
                 </div>
 
                 <div className="form-group">
-                    <input className="form-control" type="text" placeholder="请输入邮箱"/>
+                    <input ref="password" className="form-control" type="text" placeholder="请输入邮箱"/>
                 </div>
 
                 <div className="row form-group">
@@ -29,7 +34,7 @@ class  TeacherLoginForm extends Component {
                 </div>
 
                 <div>
-                    <button type="submit" className="btn btn-lg btn-block btn-primary">登录</button>
+                    <button type="submit" className="btn btn-lg btn-block btn-primary" onClick={this.judge.bind(this)}>登录</button>
                 </div>
             </div>
         )

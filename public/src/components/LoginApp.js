@@ -1,12 +1,12 @@
 import React, {Component} from "react";
-import TeacherLoginForm from "./TeacherLoginForm"
+import TeacherLoginForm from "./LoginForm"
 
 class App extends Component {
     render() {
         return (
             <div>
                 <h1 className="text-center row">思沃特训营</h1>
-            <TeacherLoginForm/>
+                <TeacherLoginForm/>
             </div>
         )
     }
