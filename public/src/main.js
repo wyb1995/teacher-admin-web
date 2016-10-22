@@ -16,7 +16,10 @@ const store = createStore(
 // store.dispatch(checkLogin.checkLogin());
 
 render(
-    <Router history={hashHistory}>
-        <Route path="/" component={App}/>
-    </Router>
+    <Provider store={store}>
+        <Router history={hashHistory}>
+            <Route path="/" component={App}/>
+            <Route path="/paperList" component={paperApp}/>
+        </Router>
+    </Provider>
     , document.getElementById('app'));
