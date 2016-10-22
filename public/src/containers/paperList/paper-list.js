@@ -5,15 +5,16 @@ import React from "react";
 import {connect} from "react-redux";
 
 import PaperList from '../../components/paper-list/PaperList.js';
+import {getPaperList} from '../../actions/paper-list/paperList';
 
 const mapStateToProps = (state)=> {
-    return {state};
+    return state;
 };
 
 const mapDispatchToProps = (dispatch)=> {
     return {
-        onGetPaperList: ()=> {
-            dispatch(getPaperList());
+        getPaperList: ()=> {
+            dispatch(getPaperList);
         }
     }
 };

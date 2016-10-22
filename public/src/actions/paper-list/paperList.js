@@ -7,11 +7,12 @@ import superagent from 'superagent';
 export const getPaperList = ()=> {
     return (dispatch)=> {
         superagent
-            .get('http://api.bronzesword.com/papers')
+            .get('bronzesword.com/papers')
             .end((err, res) => {
                 if (err) {
                     throw(err);
                 } else {
+                    console.log('----')
                     console.log(res.body);
                     dispatch(getPaperInfo(res.body));
                 }
