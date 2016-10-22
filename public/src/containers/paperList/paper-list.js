@@ -4,7 +4,7 @@
 import React from "react";
 import {connect} from "react-redux";
 
-import PaperList from '../../components/paperList/paperList';
+import PaperList from '../../components/paper-list/PaperList.js';
 
 const mapStateToProps = (state)=> {
     return {state};

@@ -8,6 +8,10 @@ import checkLogin from './actions/Login/login-action';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 
+// import createLogger from 'redux-logger';
+
+import paperApp from './containers/paperList/paper-list';
+
 const store = createStore(
     rootReducer,
     applyMiddleware(thunkMiddleware)
@@ -18,8 +22,9 @@ const store = createStore(
 render(
     <Provider store={store}>
         <Router history={hashHistory}>
-            <Route path="/" component={App}/>
-            <Route path="/paperList" component={paperApp}/>
+            <Route path="/" component={App}>
+                <Route path="paperList" component={paperApp}/>
+            </Route>
         </Router>
     </Provider>
     , document.getElementById('app'));
