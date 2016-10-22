@@ -8,7 +8,8 @@ import PaperList from '../../components/paper-list/PaperList.js';
 import {getPaperList} from '../../actions/paper-list/paperList';
 
 const mapStateToProps = (state)=> {
-    return state;
+    console.log(state)
+    return {paperList:state.paperListReducer};
 };
 
 const mapDispatchToProps = (dispatch)=> {
