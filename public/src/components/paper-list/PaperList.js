@@ -17,8 +17,8 @@ class PaperList extends Component {
             <div>
                 <button onClick={this.handleClick.bind(this)}>查看全部试卷</button>
                 {
-                    paperList.map((index, paper)=> {
-                       return <div >{paper.url}</div>
+                    paperList.map((paper, index)=> {
+                       return <div key={index} >{paper.url}</div>
                     })
                 }
             </div>
