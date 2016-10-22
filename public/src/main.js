@@ -9,7 +9,6 @@ import {Provider} from 'react-redux';
 import LoginSuccess from './components/LoginSuccess';
 import LoginApp from './components/LoginApp';
 
-
 const store = createStore(
     rootReducer,
     applyMiddleware(thunkMiddleware)

@@ -1,21 +1,19 @@
-// import React, {Component, PropTypes} from "react";
-// import {connect} from "react-redux";
-// import TeacherLoginForm from "/public/src/components/LoginForm.js";
-//
-// const mapStateToProps = (state) => {
-//     return {
-//         email:state.email,
-//         password:state.password
-//     }
-// };
-//
-// const mapDispatchProps = (dispatch) => {
-//     return {
-//         onJudge: (email, password)=> {
-//             console.log(email+password+'container');
-//             dispatch(onJudge(email,password));
-//         }
-//     }
-// };
-//
-// export default connect(mapStateToProps,mapDispatchProps)(withRouter(TeacherLoginForm));
+import {withRouter} from 'react-router';
+import checkLogin from '../actions/Login/login-action';
+
+const mapStateToProps = (state)=> {
+    return {
+        status: state.status
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onJudge: (email, password)=> {
+            dispatch(checkLogin(email, password));
+        }
+    }
+
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TeacherLoginForm));

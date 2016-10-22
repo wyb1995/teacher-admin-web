@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {withRouter, Link} from 'react-router';
-import checkLogin from '../actions/Login/login-action';
 
 class TeacherLoginForm extends Component {
     constructor(props) {
@@ -55,22 +54,5 @@ class TeacherLoginForm extends Component {
     }
 }
 
-const mapStateToProps = (state)=> {
-    console.log(state.status+'....mapState');
-    return {
-        status: state.status
-    }
+export default TeacherLoginForm;
 
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onJudge: (email, password)=> {
-            console.log(email + password + 'container');
-            dispatch(checkLogin(email, password));
-        }
-    }
-
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TeacherLoginForm));

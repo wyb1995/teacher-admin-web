@@ -2,7 +2,6 @@
 console.log('Correct user');
 
 const checkLogin = (email, password)=> {
-
     return (dispatch)=> {
         dispatch(isCorrect(email, password));
     };
