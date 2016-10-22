@@ -1,17 +1,15 @@
-import React, {Component} from "react";
+import React from "react";
 import {render} from "react-dom";
-import {Router, Route, browserHistory} from 'react-router';
+import {Router, Route, hashHistory, IndexRoute} from 'react-router';
 import App from "./containers/App";
 import thunkMiddleware from 'redux-thunk';
-// import rootReducer from './reducers/Login/login-reducer';
-import checkLogin from './actions/Login/login-action';
+import rootReducer from './reducers/index';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
+import LoginSuccess from './components/Login/LoginSuccess';
+import LoginApp from './components/Login/LoginApp';
 
-import paperApp from './containers/paperList/paper-list';
-// import paperListReducer from './reducers/paper-list/paperList';
-
-import rootReducer from './reducers/index';
+import PaperList from './containers/paperList/paper-list';
 
 
 const store = createStore(
@@ -19,13 +17,15 @@ const store = createStore(
     applyMiddleware(thunkMiddleware)
 );
 
-// store.dispatch(checkLogin.checkLogin());
-
 render(
     <Provider store={store}>
-        <Router history={browserHistory}>
-            <Route path="/" component={App}/>
-            <Route path="paperList" component={paperApp}/>
+        <Router history={hashHistory}>
+            <Route path="/" component={App}>
+                <IndexRoute component={LoginApp}/>
+                <Route path="/loginSuccess" component={LoginSuccess}/>
+            </Route>
+            <Route path='/paperList' components={PaperList}/>
         </Router>
     </Provider>
     , document.getElementById('app'));
+
