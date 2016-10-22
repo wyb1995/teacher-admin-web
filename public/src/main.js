@@ -8,13 +8,14 @@ import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import LoginSuccess from './components/Login/LoginSuccess';
 import LoginApp from './components/Login/LoginApp';
+import createLogger from 'redux-logger';
 
 import PaperList from './containers/paperList/paper-list';
 
 
 const store = createStore(
     rootReducer,
-    applyMiddleware(thunkMiddleware)
+    applyMiddleware(createLogger(), thunkMiddleware)
 );
 
 render(

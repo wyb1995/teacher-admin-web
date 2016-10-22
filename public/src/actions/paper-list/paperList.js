@@ -7,7 +7,7 @@ import superagent from 'superagent';
 export const getPaperList = ()=> {
     return (dispatch)=> {
         superagent
-            .get('bronzesword.com/papers')
+            .get('api.github.com/users/bmeritter')
             .end((err, res) => {
                 if (err) {
                     throw(err);

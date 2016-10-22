@@ -14,7 +14,7 @@ const mapStateToProps = (state)=> {
 const mapDispatchToProps = (dispatch)=> {
     return {
         getPaperList: ()=> {
-            dispatch(getPaperList);
+            dispatch(getPaperList());
         }
     }
 };
