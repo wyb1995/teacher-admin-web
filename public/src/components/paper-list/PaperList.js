@@ -11,16 +11,27 @@ class PaperList extends Component {
 
 
     render() {
-        let paperList = this.props.paperList || [];
+        const paperList = this.props.paperList || [];
         console.log(paperList);
         return (
-            <div>
-                <button onClick={this.handleClick.bind(this)}>查看全部试卷</button>
+            <div  className="col-md-offset-4 col-md-4">
+                <div>
+                    <button type="button" className="btn btn-primary btn-lg btn-block" onClick={this.handleClick.bind(this)}>查看全部试卷
+                    </button>
+                </div>
+                <br/>
                 {
-                    paperList.map((index, paper)=> {
-                       return <div >{paper.url}</div>
+                    paperList.map((paper, index)=> {
+                        return <div key={index}>
+
+                            <a href="#" className="list-group-item">
+                                {paper.id}
+                            </a>
+
+                        </div>
                     })
                 }
+
             </div>
         )
     }
