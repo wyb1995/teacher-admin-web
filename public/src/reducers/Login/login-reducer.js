@@ -1,4 +1,4 @@
-function reducer(state = {status: false}, action) {
+function loginReducer(state = {status: false}, action) {
     switch (action.type) {
         case 'LOGIN': {
             return ({
@@ -11,7 +11,10 @@ function reducer(state = {status: false}, action) {
                 status: state.status
             })
         }
+        case 'PAPERLIST': {
+            return action.paperList;
+        }
     }
     return state;
 }
-export default reducer;
+export default loginReducer;

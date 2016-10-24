@@ -1,7 +1,3 @@
-/**
- * Created by ritter on 16-10-22.
- */
-
 const paperListInfo = (state = [], action) => {
     switch (action.type) {
         case 'PAPERLIST':

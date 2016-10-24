@@ -20,10 +20,6 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
 
-app.use('*', (req, res)=>{
-    res.sendFile(path.resolve('./public/index.html'));
-});
-
 app.get('/', (res, req)=> {
     req.send('abc');
 });
