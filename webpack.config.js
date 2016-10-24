@@ -3,11 +3,11 @@ var webpack = require("webpack");
 
 module.exports = {
     entry: {
-        vendor: ["webpack-hot-middleware/client", "react", "react-dom", "./node_modules/bootstrap/dist/css/bootstrap.css"],
-        index: ["./public/src/main"]
+        vendor: ["webpack-hot-middleware/client", "react", "react-dom", "./node_modules/bootstrap/assets/css/bootstrap.css"],
+        index: ["./src/main"]
     },
     output: {
-        path: require('path').resolve("./public/dist"),
+        path: require('path').resolve("./public/assets"),
         filename: "[name].js"
     },
     module: {

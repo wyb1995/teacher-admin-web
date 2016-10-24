@@ -1,9 +1,8 @@
 'use strict';
 
-import {connect} from 'react-redux';
 import React, {Component} from 'react';
 import {render} from 'react-dom';
-import {withRouter, Link} from 'react-router';
+import {Link} from 'react-router';
 
 class TeacherLoginForm extends Component {
     constructor(props) {
@@ -24,11 +23,11 @@ class TeacherLoginForm extends Component {
                     <h3 className="welcome">欢迎注册思沃学院</h3>
 
                     <div className="form-group">
-                        <input ref="email" className="form-control" type="text" placeholder="请输入手机号"/>
+                        <input ref="email" className="form-control" type="text" placeholder="请输入邮箱"/>
                     </div>
 
                     <div className="form-group">
-                        <input ref="password" className="form-control" type="text" placeholder="请输入邮箱"/>
+                        <input ref="password" className="form-control" type="password" placeholder="请输入密码"/>
                     </div>
 
                     <div className="row form-group">
@@ -42,7 +41,7 @@ class TeacherLoginForm extends Component {
                     </div>
 
                     <div>
-                        <Link to={this.props.status ? "/loginSuccess" : "/"}>
+                        <Link to={this.props.status ? "/paperList" : "/"}>
                             <button type="submit" className="btn btn-lg btn-block btn-primary"
                                     onClick={this.judge.bind(this)}>
                                 登录

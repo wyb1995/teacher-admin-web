@@ -18,15 +18,4 @@ function loginReducer(state = {status: false}, action) {
     }
     return state;
 }
-
-// export function paperListInfo(state = [], action) {
-//     switch (action.type) {
-//         case 'PAPERLIST':
-//             return action.paperList;
-//         default:
-//             return state;
-//     }
-// }
-
-// module.exports = {reducer,paperListInfo};
 export default loginReducer;

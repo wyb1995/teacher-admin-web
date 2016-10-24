@@ -1,5 +1,4 @@
-import {withRouter} from 'react-router';
-import checkLogin from '../../actions/Login/login-action';
+import {checkLogin} from '../../actions/Login/login-action';
 import TeacherLoginForm from '../../components/Login/LoginForm'
 import {connect} from 'react-redux';
 
@@ -18,4 +17,4 @@ const mapDispatchToProps = (dispatch) => {
 
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TeacherLoginForm));
+export default connect(mapStateToProps, mapDispatchToProps)(TeacherLoginForm);
