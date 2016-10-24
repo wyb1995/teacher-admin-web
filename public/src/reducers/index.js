@@ -3,12 +3,9 @@
  */
 import {combineReducers} from 'redux';
 
-import paperListReducer from './paper-list/paperList';
-import loginReducer from './Login/login-reducer';
+import {loginReducer, paperListInfo} from './Login/login-reducer';
+// import paperListReducer from './paper-list/paperList';
 
-const rootReducer = combineReducers({
-    loginReducer,
-    paperListReducer
-});
+const rootReducer = combineReducers({loginReducer, paperListInfo});
 
 export default rootReducer;

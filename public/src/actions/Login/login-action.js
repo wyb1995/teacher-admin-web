@@ -1,5 +1,4 @@
 'use strict';
-console.log('Correct user');
 
 const checkLogin = (email, password)=> {
     return (dispatch)=> {

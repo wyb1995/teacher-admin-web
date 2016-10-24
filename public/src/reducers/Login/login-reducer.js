@@ -1,6 +1,8 @@
-function reducer(state = {status: false}, action) {
+function loginReducer(state = {status: false}, action) {
     switch (action.type) {
         case 'LOGIN': {
+            // alert('!state.status！' + !state.status);
+
             return ({
                 status: !state.status
             })
@@ -11,7 +13,20 @@ function reducer(state = {status: false}, action) {
                 status: state.status
             })
         }
+        case 'PAPERLIST':
+            return action.paperList;
     }
     return state;
 }
-module.exports = reducer;
+
+// export function paperListInfo(state = [], action) {
+//     switch (action.type) {
+//         case 'PAPERLIST':
+//             return action.paperList;
+//         default:
+//             return state;
+//     }
+// }
+
+// module.exports = {reducer,paperListInfo};
+export default loginReducer;
