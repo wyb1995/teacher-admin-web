@@ -14,4 +14,4 @@ function reducer(state = {status: false}, action) {
     }
     return state;
 }
-module.exports = reducer;
+export default reducer;

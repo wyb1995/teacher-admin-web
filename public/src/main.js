@@ -7,7 +7,7 @@ import rootReducer from './reducers/Login/login-reducer';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import LoginSuccess from './components/Login/LoginSuccess';
-import LoginApp from './components/Login/LoginApp';
+import LoginForm from './containers/Login/login-container';
 
 const store = createStore(
     rootReducer,
@@ -18,7 +18,7 @@ render(
     <Provider store={store}>
         <Router history={hashHistory}>
             <Route path="/" component={App}>
-                <IndexRoute component={LoginApp}/>
+                <IndexRoute component={LoginForm}/>
                 <Route path="/loginSuccess" component={LoginSuccess}/>
             </Route>
         </Router>

@@ -1,13 +1,12 @@
 'use strict';
-console.log('Correct user');
 
-const checkLogin = (email, password)=> {
+export const checkLogin = (email, password)=> {
     return (dispatch)=> {
         dispatch(isCorrect(email, password));
     };
 };
 
-const isCorrect = (email, password)=> {
+export const isCorrect = (email, password)=> {
     if (email === 'admin@admin.com' && password === '12345678') {
         return {
             type: 'LOGIN'
@@ -19,6 +18,5 @@ const isCorrect = (email, password)=> {
     }
 };
 
-export default checkLogin;
 
 
